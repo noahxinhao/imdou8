@@ -1,0 +1,14 @@
+{
+  "name": "魔豆社区",
+  "app_id": "",
+  "proxies": [
+      {
+        "path": "/ele",
+        "proxyUrl": "http://m.ele.me/home"
+      },
+      {
+        "path": "/api",
+        "proxyUrl": "https://www.juxinli.com/api"
+      }
+    ]
+}

@@ -1,0 +1,13 @@
+<ion-modal-view  enable-menu-with-back-views="false">
+  <ion-header-bar class="bar bar-header bar-stable">
+    <h1 class="title">对接说明</h1>
+    <button class="button button-clear button-primary button-icon icon ion-ios-close-empty" ng-click="modal.hide()"></button>
+  </ion-header-bar>
+  <ion-content class="">
+    <div class="card">
+      <div class="item item-divider">参数基本信息</div>
+      <div class="item item-text-wrap">登陆表单参数:{{vm.formData}}</div>
+      <div class="item item-text-wrap">密码重置表单参数:{{vm.reset_form_data}}</div>
+    </div>
+  </ion-content>
+</ion-modal-view>

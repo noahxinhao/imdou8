@@ -1,0 +1,180 @@
+<div class="bar bar-header item-input-inset im-account-header" back-button-type="button-icon"
+     back-button-icon="ion-arrow-left-c">
+  <a class="button button-icon button-clear ion-ios-gear-outline ion-white"
+     href="#/tab/account-setting"></a>
+  <h3 class="title">
+    我的
+  </h3>
+  <button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>
+</div>
+<ion-view>
+  <ion-content class="has-header">
+    <ion-list class="im-account-list">
+      <a class="item item-avatar" href="#">
+        <img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">
+
+        <h2>18721988563</h2>
+
+        <p>Back off, man. I'm a scientist.</p>
+      </a>
+    </ion-list>
+    <div class="im-div-divider"></div>
+
+    <div class="list im-list-info">
+      <a class="item item-icon-left im-list-bottom-clear" href="#/tab/wallet">
+        <i class="icon ion-briefcase calm"></i>
+        <span style="padding-left: 0px">钱包</span>
+        <span class="item-note">
+          50.00
+        </span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+      <span class="im-span-divider"></span>
+      <a class="item item-icon-left im-list-top-clear" href="#/tab/bank-card">
+        <i class="icon ion-card positive"></i>
+        <span style="padding-left: 0px">银行卡</span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+
+    </div>
+    <div class="im-div-divider"></div>
+
+    <div class="list im-list-info">
+      <a class="item item-icon-left im-list-bottom-clear" style="border-bottom-width: 0px;" href="#">
+        <i class="icon ion-heart assertive"></i>
+        <span style="padding-left: 0px">关注</span>
+        <span class="item-note">俏江南</span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+
+      <span class="im-span-divider"></span>
+      <a class="item item-icon-left" style="border-top-width: 0px;border-bottom-width: 0px" href="#">
+        <i class="icon ion-cash balanced"></i>
+        <span style="padding-left: 0px">优惠券</span>
+        <span class="item-note">星巴克</span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+      <span class="im-span-divider"></span>
+      <a class="item item-icon-left im-list-bottom-top-clear" href="#">
+        <i class="icon ion-ios-cart positive"></i>
+        <span style="padding-left: 0px">购物车</span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+
+      <span class="im-span-divider"></span>
+      <a class="item item-icon-left im-list-top-clear" href="#">
+        <i class="icon ion-person-stalker royal"></i>
+        <span style="padding-left: 0px">好友</span>
+        <span class="badge">
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="im-div-divider"></div>
+    <ion-list>
+      <ion-toggle ng-model="settings.enableFriends">
+        推送附近活动
+      </ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>
+<ion-nav-view name="account-view"></ion-nav-view>
+<style>
+
+  .im-account-header {
+    background-color: rgba(36, 43, 69, 0.9);
+    background-size: 100% 0px !important;
+  }
+
+  .im-account-header > h3 {
+    color: white;
+    border: 0px;
+  }
+
+  .im-account-list > div {
+    padding-top: 0px;
+    background-image: url('img/bg/account-3.png');
+
+  }
+
+  .im-account-list > div > a {
+    border-top: 0px !important;
+    background-color: rgba(12, 19, 42, 0.8);
+    min-height: 132px;
+    padding-left: 92px !important;
+    padding-top: 38px !important;
+    border: 0px !important;
+  }
+
+  .im-account-list > div > a > img {
+    top: 30px !important;
+    max-width: 65px !important;
+    max-height: 65px !important;
+  }
+
+  .im-account-list > div > a.activated {
+    background-color: rgba(12, 19, 42, 0.8) !important;
+  }
+
+  .im-div-divider {
+    min-height: 14px;
+    background-color: #f5f5f5 !important;
+    color: #222;
+    font-weight: 500;
+  }
+
+  .im-span-divider {
+    border-top: 3px solid #f5f5f5;
+    padding: 0px;
+    display: block;
+    margin-left: 17px;
+  }
+
+  .im-list-info {
+    margin-bottom: 0px;
+  }
+
+  .im-list-info > a {
+    padding: 12px 12px 12px 50px !important;
+  }
+
+  .im-list-info > a > span {
+    padding: 5px
+  }
+
+  .im-list-info > a > span.item-note {
+    padding:0px 25px 0px 0px
+  }
+
+  .im-list-info > a > span.badge {
+    padding-top: 8px
+  }
+
+  .im-list-info > a > i {
+    font-size: 23px !important;
+  }
+
+
+  .im-list-bottom-clear {
+    border-bottom-width: 0px !important;
+  }
+
+  .im-list-top-clear {
+    border-top-width: 0px !important;
+  }
+  .im-list-bottom-top-clear {
+    border-bottom-width: 0px !important;
+    border-top-width: 0px !important;
+  }
+</style>

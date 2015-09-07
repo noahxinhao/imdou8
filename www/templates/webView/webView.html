@@ -1,0 +1,45 @@
+<div class="bar bar-header  item-input-inset" back-button-type="button-icon"
+     back-button-icon="ion-arrow-left-c">
+  <button class="button button-icon button-clear ion-ios-arrow-left ion-white" ng-click="vm.back()"></button>
+  <h3 class="title">
+    魔豆步行街
+  </h3>
+  <button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>
+</div>
+<ion-view hide-tabs>
+  <!--<ion-nav-bar>-->
+    <!--<ion-nav-back-button>返回</ion-nav-back-button>-->
+    <!--<ion-nav-title>详情页面</ion-nav-title>-->
+    <!--<ion-nav-buttons side="right">-->
+      <!--&lt;!&ndash;menu-toggle="right"是打开右侧边栏选项 &ndash;&gt;-->
+      <!--<button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>-->
+    <!--</ion-nav-buttons>-->
+  <!--</ion-nav-bar>-->
+  <ion-content class=" has-header">
+    <div class="list card">
+      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-body">
+        <div>
+          There is a fire in <b>sector 3</b>
+          <a href="#/webView/page">测试</a>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Health</div>
+      <div class="item item-body">
+        <div>
+          You ate an apple today!
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Upcoming</div>
+      <div class="item item-body">
+        <div>
+          You have <b>29</b> meetings on your calendar tomorrow.
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

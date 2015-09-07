@@ -1,0 +1,102 @@
+<div class="bar bar-header item-input-inset im-friends-header" back-button-type="button-icon"
+     back-button-icon="ion-arrow-left-c">
+  <h3 class="title">
+    我的好友
+  </h3>
+  <button class="button button-icon button-clear ion-ios-plus-empty ion-white" ng-click="popover.show($event)"></button>
+</div>
+<ion-view>
+  <ion-content class="has-header">
+    <ion-list ng-click="vm.go()" class="im-friends-list" >
+      <div class="" ng-repeat="chat in chats">
+        <ion-item class="item-remove-animate item-avatar item-icon-right im-chats-item im-list-bottom-top-clear"
+                  style="min-height: 0px!important;" type="item-text-wrap"
+                  ng-click="vm.go('/chatView/chat-detail/{{chat._id}}')">
+          <img ng-src="{{chat.pic}}"/>
+
+          <h2>{{chat.username}}</h2>
+
+          <p>{{chat.lastText}} </p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          <span class=" badge badge-assertive">10</span>
+          <!--<ion-option-button class="">置顶</ion-option-button>-->
+          <ion-option-button class="">设为未读</ion-option-button>
+          <ion-option-button class="button-assertive" ng-click="remove(chat)">删除</ion-option-button>
+        </ion-item>
+        <span class="im-chats-span-divider"></span>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
+<!--</div>-->
+<div class="bar bar-footer" style="padding:0px">
+  <ion-tabs class="tabs-icon-top tabs-default im-tabs-basic-color">
+    <!-- Dashboard Tab -->
+    <ion-tab title="MO" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" href="#/tab/home">
+      <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Chats Tab -->
+    <ion-tab title="好友" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/chatView/chats">
+      <ion-nav-view name="chat-view"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Account Tab -->
+    <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/account">
+      <ion-nav-view name="tab-account"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+</div>
+
+<style>
+  .im-friends-header {
+    background-color: rgba(36, 43, 69, 0.9);
+    background-size: 100% 0px !important;
+  }
+
+  .im-friends-header > h3 {
+    color: white !important;
+    border: 0px;
+  }
+
+  .im-friends-list > div > *.activated {
+    background-color: rgba(12, 19, 42, 0.8) !important;
+    padding-top: 0px;
+  }
+
+  .im-chats-span-divider {
+    border-top: 3px solid #f5f5f5;
+    padding: 0px;
+    display: block;
+    margin-left: 10px;
+  }
+
+  .im-list-bottom-clear {
+    border-bottom-width: 0px !important;
+  }
+
+  .im-list-top-clear {
+    border-top-width: 0px !important;
+  }
+
+  .im-list-bottom-top-clear {
+    border-bottom-width: 0px !important;
+    border-top-width: 0px !important;
+  }
+
+  .im-chats-item > div {
+    padding: 10px 49px 7px 70px !important;
+    min-height: 0px !important;
+  }
+
+  .im-chats-item > div.item-options {
+    padding: 0px !important;
+    min-height: 0px !important;
+  }
+
+  .im-chats-item > div > img {
+    top: 10px !important;
+    border-radius: 5px !important;
+    left: 10px !important;
+  }
+</style>

@@ -1,0 +1,65 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (dashCtrl.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<div class="bar bar-header  item-input-inset" back-button-type="button-icon"
+     back-button-icon="ion-arrow-left-c">
+  <button class="button button-icon button-clear ion-ios-arrow-left ion-white" ng-click="vm.backToChats()"></button>
+  <h3 class="title">
+    <i class='icon ion-chatbubble-working user-messages-top-icon'></i>
+    {{toUser.username}}
+  </h3>
+  <button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>
+</div>
+
+<ion-view id="userMessagesView" cache-view="true">
+  <div class="loader-center" ng-if="!doneLoading">
+    <div class="loader">
+      <ion-spinner icon="dots"></ion-spinner>
+    </div>
+  </div>
+  <ion-content has-bouncing="true" class="has-header has-footer" delegate-handle="userMessageScroll">
+    <div ng-repeat="message in vm.chatMessages" class="message-wrapper"
+         on-hold="onMessageHold($event, $index, message)">
+
+      <div ng-if="user._id !== message.userId">
+
+        <img ng-click="viewProfile(message)" class="profile-pic left"
+             ng-src="{{toUser.pic}}" onerror="vm.onProfilePicError(this)"/>
+
+        <div class="chat-bubble left">
+          <div class="message" ng-bind-html="message.text | nl2br" autolinker></div>
+        </div>
+      </div>
+
+      <div ng-if="user._id === message.userId">
+        <img ng-click="viewProfile(message)" class="profile-pic right" ng-src="{{user.pic}}"
+             onerror="vm.onProfilePicError(this)"/>
+
+        <div class="chat-bubble right">
+          <div class="message" ng-bind-html="message.text | nl2br" autolinker></div>
+        </div>
+      </div>
+      <div class="cf"></div>
+    </div>
+  </ion-content>
+
+  <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+    <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+      <label class="item-input-wrapper">
+        <input ng-model="input.message" value="" type="text" placeholder="输入信息" required minlength="1" maxlength="1500"
+               msd-elastic/>
+      </label>
+
+      <div class="footer-btn-wrap" style="width:35px">
+        <a class="button button-icon icon ion-android-happy footer-btn"></a>
+      </div>
+
+      <div class="footer-btn-wrap" style="width:35px">
+        <a class="button button-icon icon ion-ios-plus-outline footer-btn" type="submit"></a>
+      </div>
+    </ion-footer-bar>
+  </form>
+</ion-view>

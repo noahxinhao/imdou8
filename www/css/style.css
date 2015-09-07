@@ -1,0 +1,9 @@
+.im-tabs-basic-color{
+  background-color: rgba(36, 43, 69, 0.9);
+  background-size: 100% 0px !important;
+}
+
+ion-tabs.im-tabs-basic-color .tab-item {
+  color: #444; }
+ion-tabs.im-tabs-basic-color .tab-item.tab-item-active, ion-tabs.im-tabs-basic-color .tab-item.active, ion-tabs.im-tabs-basic-color .tab-item.activated {
+  color: rgba(36, 43, 69, 0.9); }
