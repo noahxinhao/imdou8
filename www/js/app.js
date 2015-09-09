@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in chatService.js
-// 'starter.controllers' is found in dashCtrl.js
+// 'starter.controllers' is found in homeCtrl.js
 angular.module('app', ['ionic', 'LocalStorageModule', 'ngCordova', 'app.router', 'app.controllers', 'app.constants', 'app.services', 'app.directives', 'app.filters'])
   .run(function ($ionicPlatform, pusNotificationService) {
     $ionicPlatform.ready(function () {

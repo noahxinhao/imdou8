@@ -1,6 +1,6 @@
 <!--
   This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (dashCtrl.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (homeCtrl.js)
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
@@ -14,7 +14,7 @@
   <button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>
 </div>
 
-<ion-view id="userMessagesView" cache-view="true">
+<ion-view id="userMessagesView" cache-view="true" hide-tabs>
   <div class="loader-center" ng-if="!doneLoading">
     <div class="loader">
       <ion-spinner icon="dots"></ion-spinner>

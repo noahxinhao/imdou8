@@ -31,39 +31,41 @@
   <!-- your app's js -->
   <script src="js/app.js"></script>
   <script src="js/config/router.js"></script>
-  <script src="js/controllers/dashCtrl.js"></script>
-  <script src="js/controllers/chatsCtrl.js"></script>
-  <script src="js/controllers/chatDetailCtrl.js"></script>
-  <script src="js/controllers/webPageCtrl.js"></script>
-  <script src="js/controllers/accountCtrl.js"></script>
-  <script src="js/controllers/webViewCtrl.js"></script>
-  <script src="js/controllers/walletCtrl.js"></script>
-  <script src="js/controllers/bankCardCtrl.js"></script>
-  <script src="js/controllers/accountSettingCtrl.js"></script>
+
+  <!-- controllers-->
+  <script src="js/controllers/home/homeCtrl.js"></script>
+  <script src="js/controllers/chats/chatsCtrl.js"></script>
+  <script src="js/controllers/chats/chatDetailCtrl.js"></script>
+  <script src="js/controllers/home/webPageCtrl.js"></script>
+  <script src="js/controllers/home/adDetailsCtrl.js"></script>
+  <script src="js/controllers/account/accountCtrl.js"></script>
+  <script src="js/controllers/account/walletCtrl.js"></script>
+  <script src="js/controllers/account/bankCardCtrl.js"></script>
+  <script src="js/controllers/account/accountSettingCtrl.js"></script>
+  <script src="js/controllers/account/followCtrl.js"></script>
+  <script src="js/controllers/account/friendsCtrl.js"></script>
+  <script src="js/controllers/account/shoppingCartCtrl.js"></script>
+  <script src="js/controllers/account/couponsCtrl.js"></script>
+
+  <!-- directives-->
   <script src="js/directives/autolinker.js"></script>
   <script src="js/directives/hideTabs.js"></script>
+
+  <!-- filters-->
   <script src="js/filter/filters.js"></script>
   <script src="js/filter/area_filter.js"></script>
+
+  <!-- services-->
   <script src="js/services/chatService.js"></script>
   <script src="js/services/pushNotificationService.js"></script>
   <script src="js/services/GlobalTools.js"></script>
   <script src="js/services/MockService.js"></script>
   <script src="js/services/CameraService.js"></script>
+
+  <!-- constants-->
   <script src="js/constants/area_constants.js"></script>
 </head>
 <body ng-app="app">
-<!--
-  The nav bar that will be updated as we navigate between views.
--->
-<!--<ion-nav-bar class="bar-stable">-->
-<!--<ion-nav-back-button>-->
-<!--</ion-nav-back-button>-->
-<!--</ion-nav-bar>-->
-<!--
-  The views will be rendered in the <ion-nav-view> directive below
-  Templates are in the /templates folder (but you could also
-  have templates inline in this html file if you'd like).
--->
 <ion-nav-view></ion-nav-view>
 </body>
 </html>

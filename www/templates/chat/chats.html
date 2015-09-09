@@ -11,7 +11,7 @@
       <div class="" ng-repeat="chat in chats">
         <ion-item class="item-remove-animate item-avatar item-icon-right im-chats-item im-list-bottom-top-clear"
                   style="min-height: 0px!important;" type="item-text-wrap"
-                  ng-click="vm.go('/chatView/chat-detail/{{chat._id}}')">
+                  ng-click="vm.go('/tab/chat-detail/{{chat._id}}')">
           <img ng-src="{{chat.pic}}"/>
 
           <h2>{{chat.username}}</h2>
@@ -28,25 +28,6 @@
     </ion-list>
   </ion-content>
 </ion-view>
-<!--</div>-->
-<div class="bar bar-footer" style="padding:0px">
-  <ion-tabs class="tabs-icon-top tabs-default im-tabs-basic-color">
-    <!-- Dashboard Tab -->
-    <ion-tab title="MO" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" href="#/tab/home">
-      <ion-nav-view name="tab-home"></ion-nav-view>
-    </ion-tab>
-
-    <!-- Chats Tab -->
-    <ion-tab title="好友" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/chatView/chats">
-      <ion-nav-view name="chat-view"></ion-nav-view>
-    </ion-tab>
-
-    <!-- Account Tab -->
-    <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/account">
-      <ion-nav-view name="tab-account"></ion-nav-view>
-    </ion-tab>
-  </ion-tabs>
-</div>
 
 <style>
   .im-friends-header {
