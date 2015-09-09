@@ -1,7 +1,7 @@
 angular.module('app.controllers')
-  .controller('adDetailsCtrl', function($scope, $ionicHistory,$stateParams) {
+  .controller('adDetailsCtrl', function ($scope, $ionicHistory, $stateParams, $ionicModal) {
     var vm = $scope.vm = {};
-    vm.backToHome=function(){
+    vm.backToHome = function () {
       $ionicHistory.goBack();
     }
 

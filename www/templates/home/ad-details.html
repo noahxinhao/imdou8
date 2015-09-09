@@ -4,28 +4,34 @@
   <h3 class="title" style="color: #111111!important;">
   </h3>
 
-  <div class="im-ad-share-btn" style="color: #111111;font-size: 22px!important; padding-left: 260px">
-    <a href="#" style="color: #111111;font-size: 22px!important;"><i class="fa fa-share-square-o fa-sm"
-                                                                     style="font-size: 22px!important;"></i></a>
-    <a href="#" style="color: #111111;font-size: 22px!important;"><i class="fa fa-heart-o fa-sm"
-                                                                     style="font-size: 22px!important;padding-left: 10px"></i></a>
+  <div class="im-ad-share-btn">
+    <span class="im-btn-share-sm">
+      <i class="fa fa-share-square-o fa-sm" style="font-size: 22px!important;"></i>
+    </span>
+    <span class="im-btn-share-sm">
+      <i class="fa fa-heart-o fa-sm" style="font-size: 22px!important;padding-left: 10px"></i>
+    </span>
   </div>
 </div>
 
-<ion-view hide-tabs style="padding: 1px">
-  <ion-content class="">
+<ion-view hide-tabs style="padding: 0px">
+  <ion-content class="has-footer">
     <div class="list" style="padding-top: 0px;">
+
       <ion-slide-box style="height:200px" on-slide-changed="" auto-play="false"
                      does-continue="true" slide-interval="5000">
         <ion-slide ng-repeat="ele in vm.slideElement">
           <div class="box item-image">
-            <a href="#/tab/ad-details">
-              <img ng-src="{{ele.img}}" class="full-image im-silder" style="height: 200px" alt="...">
-            </a>
+            <img ng-src="{{ele.img}}" class="full-image im-silder"
+                 style="height: 200px" alt="...">
           </div>
         </ion-slide>
       </ion-slide-box>
-      <div class="item" style="background: #fff;font-size: 15px;line-height: 20px;padding: 13px 10px;position: relative;word-break: break-word;">杭州天城，开元酒店1晚+双早+双晚双人套餐（中/晚餐）</div>
+
+      <div class="item"
+           style="white-space:normal;background: #fff;font-size: 15px;line-height: 20px;padding: 13px 10px;position: relative;word-break: break-word;">
+        杭州天城，开元酒店1晚+双早+双晚双人套餐（中/晚餐）
+      </div>
       <div class="item row" style="border-top: 0px">
         <div class="col" style="border-right: 1px solid #f5f5f5">
           <span style="color: #111111;font-size: 22px!important;">
@@ -49,8 +55,8 @@
     </div>
     <div class="card">
       <div class="item item-divider">
-        <span style="color: #111111;font-size: 22px!important;">
-            <i class="fa fa-star fa-sm" style="font-size: 18px!important;padding-left: 10px"></i>
+          <span style="color: #111111;font-size: 22px!important;">
+            <i class="fa fa-star fa-sm im-ad-details-icon-sm"></i>
           </span>
         <span>特色推荐</span>
       </div>
@@ -63,9 +69,9 @@
       </div>
       <div class="list im-list-info">
         <a class="item item-icon-left im-list-bottom-clear" style="border-bottom-width: 0px;" href="#">
-          <i class="icon ion-heart assertive"></i>
+          <i class="icon ion-navicon assertive"></i>
           <span style="padding-left: 0px">详细信息</span>
-          <span class="item-note">俏江南</span>
+          <span class="item-note"></span>
         <span class="badge">
           <i class="icon ion-chevron-right icon-accessory"></i>
         </span>
@@ -73,16 +79,16 @@
 
         <span class="im-span-divider"></span>
         <a class="item item-icon-left" style="border-top-width: 0px;border-bottom-width: 0px" href="#">
-          <i class="icon ion-cash balanced"></i>
+          <i class="icon ion-ios-clock-outline balanced"></i>
           <span style="padding-left: 0px">活动时间</span>
-          <span class="item-note">星巴克</span>
+          <span class="item-note">9/17</span>
         <span class="badge">
           <i class="icon ion-chevron-right icon-accessory"></i>
         </span>
         </a>
         <span class="im-span-divider"></span>
         <a class="item item-icon-left im-list-bottom-top-clear" href="#">
-          <i class="icon ion-ios-cart positive"></i>
+          <i class="icon ion-ios-color-filter-outline positive"></i>
           <span style="padding-left: 0px">类型</span>
         <span class="badge">
           <i class="icon ion-chevron-right icon-accessory"></i>
@@ -91,7 +97,7 @@
 
         <span class="im-span-divider"></span>
         <a class="item item-icon-left im-list-top-clear" href="#">
-          <i class="icon ion-person-stalker royal"></i>
+          <i class="icon ion-android-map royal"></i>
           <span style="padding-left: 0px">活动地址</span>
         <span class="badge">
           <i class="icon ion-chevron-right icon-accessory"></i>
@@ -99,26 +105,42 @@
         </a>
       </div>
     </div>
-
   </ion-content>
+  <div class="bar bar-footer" style="padding: 0px;margin: 0px" >
+    <div class="row" style="padding: 0px;">
+      <div class="col" style="text-align: center">
+        <a class="button button-clear" style="color:black">了解详情</a>
+      </div>
+      <div class="col" style="background-color: #ff8400!important; text-align: center">
+        <a class="button button-clear" style="color:white" class="">参加活动</a>
+      </div>
+    </div>
+  </div>
 </ion-view>
-<div class="bar bar-footer" style="background-color: #ff8400!important;">
-  <button class="button button-clear pull-right">参加活动</button>
-</div>
+
 
 <style>
-  .recommendation{
+  .im-ad-share-btn {
+    color: #111111;
+    font-size: 22px !important;
+    padding-left: 260px
+  }
+
+  .im-btn-share-sm {
+    color: #111111;
+    font-size: 22px !important;
+  }
+
+  .recommendation {
     background: #fdf6e2;
     padding: 12px 10px;
   }
-  .recommendation li{
+
+  .recommendation li {
     font-size: 13px;
     color: #ff8400;
     position: relative;
     line-height: 19px;
-  }
-  .im-ad-details-header {
-    background-color: rgba(255, 255, 255, .66) !important; /* or transparent, or background:none */
   }
 
   .im-ad-details-header > h3 {
@@ -126,29 +148,29 @@
     border: 0px;
   }
 
-  .im-wallet-list-info {
+  .im-ad-details-list-info {
     margin-bottom: 0px;
   }
 
-  .im-wallet-list-info > a {
+  .im-ad-details-list-info > a {
     padding: 12px 12px 12px 12px;
   }
 
-  .im-wallet-list-info > a > span {
+  .im-ad-details-list-info > a > span {
     padding: 5px
   }
 
-  .im-wallet-list-info > a > span.item-note {
+  .im-ad-details-list-info > a > span.item-note {
     padding: 0px 23px 0px 0px;
     font-size: 15px;
     font-weight: 300;
   }
 
-  .im-wallet-list-info > a > span.badge {
+  .im-ad-details-list-info > a > span.badge {
     padding-top: 8px
   }
 
-  .im-wallet-list-info > a > i {
+  .im-ad-details-list-info > a > i {
     font-size: 23px !important;
   }
 
@@ -192,7 +214,7 @@
   }
 
   .im-list-info > a > span.item-note {
-    padding:0px 25px 0px 0px
+    padding: 0px 25px 0px 0px
   }
 
   .im-list-info > a > span.badge {
@@ -202,10 +224,16 @@
   .im-list-info > a > i {
     font-size: 23px !important;
   }
+
   .im-span-divider {
     border-top: 3px solid #f5f5f5;
     padding: 0px;
     display: block;
     margin-left: 17px;
+  }
+
+  .im-ad-details-icon-sm {
+    font-size: 18px !important;
+    color: #ff8400
   }
 </style>
