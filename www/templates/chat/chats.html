@@ -6,10 +6,10 @@
   <button class="button button-icon button-clear ion-ios-plus-empty ion-white" ng-click="popover.show($event)"></button>
 </div>
 <ion-view>
-  <ion-content class="has-header">
+  <ion-content class="has-header has-footer">
     <ion-list ng-click="vm.go()" class="im-friends-list" >
       <div class="" ng-repeat="chat in chats">
-        <ion-item class="item-remove-animate item-avatar item-icon-right im-chats-item im-list-bottom-top-clear"
+        <ion-item class="item-remove-animate item-avatar item-icon-right im-chats-item im-list-bottom-top-clear im-clear-top-bottom-margin"
                   style="min-height: 0px!important;" type="item-text-wrap"
                   ng-click="vm.go('/tab/chat-detail/{{chat._id}}')">
           <img ng-src="{{chat.pic}}"/>
@@ -46,7 +46,7 @@
   }
 
   .im-chats-span-divider {
-    border-top: 3px solid #f5f5f5;
+    border-top: 1px solid #f5f5f5;
     padding: 0px;
     display: block;
     margin-left: 10px;

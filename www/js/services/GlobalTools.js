@@ -168,4 +168,20 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
   return {
     ready: ready.promise
   }
+}).factory(("barcodeScanner"), function () {
+  return{
+    scan:function(){
+      cordova.plugins.barcodeScanner.scan(
+        function (result) {
+          alert("We got a barcode\n" +
+            "Result: " + result.text + "\n" +
+            "Format: " + result.format + "\n" +
+            "Cancelled: " + result.cancelled);
+        },
+        function (error) {
+          alert("Scanning failed: " + error);
+        }
+      );
+    }
+  }
 });

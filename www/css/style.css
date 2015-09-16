@@ -8,6 +8,17 @@ ion-tabs.im-tabs-basic-color .tab-item {
 ion-tabs.im-tabs-basic-color .tab-item.tab-item-active, ion-tabs.im-tabs-basic-color .tab-item.active, ion-tabs.im-tabs-basic-color .tab-item.activated {
   color: rgba(36, 43, 69, 0.9); }
 
+.im-clear-bottom-margin{
+  margin-bottom: 0px!important;
+}
+.im-clear-top-margin{
+  margin-top: 0px!important;
+}
+.im-clear-top-bottom-margin{
+  margin-top: 0px!important;
+  margin-bottom: 0px!important;
+}
+
 .scroll-content {
   overflow: visible !important;
 }

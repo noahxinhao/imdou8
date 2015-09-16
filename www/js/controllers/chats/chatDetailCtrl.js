@@ -24,7 +24,7 @@ angular.module('app.controllers')
 
     $ionicPopover.fromTemplateUrl('templates/chat/chat-popover.html', {
       scope: $scope,
-    }).then(function(popover) {
+    }).then(function (popover) {
       $scope.popover = popover;
     });
     vm.chatMessages = [];
@@ -208,6 +208,21 @@ angular.module('app.controllers')
     vm.onProfilePicError = function (t) {
       appTools.onProfilePicError(t);
     }
+
+    vm.sendMessage = function () {
+      socket.emit('send:message', {
+        message: $scope.message
+      });
+
+      // add the message to our model locally
+      $scope.messages.push({
+        user: $scope.name,
+        text: $scope.message
+      });
+
+      // clear message box
+      $scope.message = '';
+    };
   });
 
 // configure moment relative time

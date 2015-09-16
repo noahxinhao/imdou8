@@ -10,7 +10,7 @@ angular.module('app.directives').directive('hideTabs', function($rootScope) {
 
       scope.$on('$ionicView.leave', function() {
         if(doc.getAttribute("class").indexOf("animated fadeInUp")<0){
-          doc.setAttribute("class",doc.getAttribute("class")+" animated fadeInUp");
+          doc.setAttribute("class",doc.getAttribute("class")+" im-tabs-animated fadeInUp");
         }
         $rootScope.hideTabs = false;
       });
