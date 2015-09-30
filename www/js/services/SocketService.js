@@ -1,7 +1,7 @@
 angular.module('app.services').factory('socketService', function () {
   return {
     connectServe: function () {
-      var socket = io.connect('http://192.168.100.238:9098',{'force new connection': true});
+      var socket = io.connect('http://msg.imdou8.com', {'force new connection': true});
 
       socket.on('connect', function () {
         console.log("连接服务器成功");

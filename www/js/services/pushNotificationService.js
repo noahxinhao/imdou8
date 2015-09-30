@@ -16,7 +16,7 @@ angular.module('app.services').factory('pusNotificationService', function ($cord
       $cordovaPush.register(config).then(function (result) {
         console.log("Register success " + result);
         if (ionic.Platform.isIOS()) {
-          $scope.regId = result;
+          //$scope.regId = result;
           //vm.storeDeviceToken("ios");//保存token到服务器
         }
       }, function (err) {

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in chatService.js
 // 'starter.controllers' is found in homeCtrl.js
-angular.module('app', ['ionic', 'LocalStorageModule', 'ngCordova', 'app.router', 'app.controllers', 'app.constants', 'app.services', 'app.directives', 'app.filters'])
+angular.module('app', ['ionic', 'LocalStorageModule','ngIOS9UIWebViewPatch', 'ngCordova', 'app.router', 'app.controllers', 'app.constants', 'app.services', 'app.directives', 'app.filters'])
   .run(function ($ionicPlatform, pusNotificationService, socketService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -29,9 +29,10 @@ angular.module('app', ['ionic', 'LocalStorageModule', 'ngCordova', 'app.router',
 
 
     });
-  }).config(function ($ionicConfigProvider) {
-    $ionicConfigProvider.tabs.position("bottom");
-  });
+  })
+  //.config(function ($ionicConfigProvider) {
+  //  $ionicConfigProvider.tabs.position("bottom");
+  //});
 angular.module('app.router', []);
 angular.module('app.services', ['MockService']);
 angular.module('app.constants', []);
