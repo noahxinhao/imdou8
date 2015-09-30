@@ -6,7 +6,7 @@
 // 'starter.services' is found in chatService.js
 // 'starter.controllers' is found in homeCtrl.js
 angular.module('app', ['ionic', 'LocalStorageModule', 'ngCordova', 'app.router', 'app.controllers', 'app.constants', 'app.services', 'app.directives', 'app.filters'])
-  .run(function ($ionicPlatform, pusNotificationService,socketService) {
+  .run(function ($ionicPlatform, pusNotificationService, socketService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -24,12 +24,13 @@ angular.module('app', ['ionic', 'LocalStorageModule', 'ngCordova', 'app.router',
 
       console.log("开始启动socket连接");
       socketService.connectServe();
-      console.log("socket连接完成");
 
       pusNotificationService.appRegister();
 
 
     });
+  }).config(function ($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position("bottom");
   });
 angular.module('app.router', []);
 angular.module('app.services', ['MockService']);

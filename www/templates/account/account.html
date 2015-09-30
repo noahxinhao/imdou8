@@ -2,6 +2,7 @@
      back-button-icon="ion-arrow-left-c">
   <a class="button button-icon button-clear ion-ios-gear-outline ion-white"
      href="#/tab/account-setting"></a>
+
   <h3 class="title">
     我的
   </h3>
@@ -9,15 +10,23 @@
 </div>
 <ion-view>
   <ion-content class="has-header has-footer">
-    <ion-list class="im-account-list">
-      <a class="item item-avatar" href="#">
+    <ion-list class="im-account-list" ng-if="vm.isLogin">
+      <a class="item item-avatar" href="#" style="color: white">
         <img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">
 
-        <h2>18721988563</h2>
+        <h2>{{vm.LoginUser.account}}</h2>
 
         <p>Back off, man. I'm a scientist.</p>
       </a>
     </ion-list>
+
+    <ion-list class="im-account-list" ng-if="!vm.isLogin" style="">
+      <a class="item item-avatar" href="#" ng-click="vm.showLoginModal()">
+        <img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">
+        <h2 href="#" style="color: white">未登陆</h2>
+      </a>
+    </ion-list>
+
     <div class="im-div-divider"></div>
 
     <div class="list im-list-info">
@@ -44,7 +53,8 @@
     <div class="im-div-divider"></div>
 
     <div class="list im-list-info">
-      <a class="item item-icon-left im-list-bottom-clear im-clear-bottom-margin" style="border-bottom-width: 0px;" href="#/tab/follow">
+      <a class="item item-icon-left im-list-bottom-clear im-clear-bottom-margin" style="border-bottom-width: 0px;"
+         href="#/tab/follow">
         <i class="icon ion-heart assertive"></i>
         <span style="padding-left: 0px">关注</span>
         <span class="item-note">俏江南</span>
@@ -54,7 +64,8 @@
       </a>
 
       <span class="im-span-divider"></span>
-      <a class="item item-icon-left  im-clear-top-bottom-margin" style="border-top-width: 0px;border-bottom-width: 0px" href="#/tab/coupons">
+      <a class="item item-icon-left  im-clear-top-bottom-margin" style="border-top-width: 0px;border-bottom-width: 0px"
+         href="#/tab/coupons">
         <i class="icon ion-cash balanced"></i>
         <span style="padding-left: 0px">优惠券</span>
         <span class="item-note">星巴克</span>
@@ -154,7 +165,7 @@
   }
 
   .im-list-info > a > span.item-note {
-    padding:0px 25px 0px 0px
+    padding: 0px 25px 0px 0px
   }
 
   .im-list-info > a > span.badge {
@@ -165,7 +176,6 @@
     font-size: 23px !important;
   }
 
-
   .im-list-bottom-clear {
     border-bottom-width: 0px !important;
   }
@@ -173,6 +183,7 @@
   .im-list-top-clear {
     border-top-width: 0px !important;
   }
+
   .im-list-bottom-top-clear {
     border-bottom-width: 0px !important;
     border-top-width: 0px !important;

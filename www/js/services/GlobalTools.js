@@ -3,7 +3,10 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
                                                              $cordovaToast,
                                                              localStorageService,
                                                              $ionicLoading,
-                                                             $ionicPopup, $timeout) {
+                                                             $ionicPopup,
+                                                             $q,
+                                                             $http,
+                                                             $timeout) {
   return {
     imGetCurrentPosition: function () {
       //获取地理位置信息
@@ -157,6 +160,29 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
     hideLoad: function () {
       $ionicLoading.hide();
     },
+    httpGet: function (url, data) {
+      var deferred = $q.defer();
+      $http.get(url, data)
+        .success(function (result) {
+          deferred.resolve(result)
+        }).error(function (result) {
+          deferred.reject(result)
+        });
+      return deferred.promise;
+    },
+
+    httpPost: function (url, data) {
+      console.log("请求url" + url);
+      console.log("请求数据" + JSON.stringify(data));
+      var deferred = $q.defer();
+      $http.post(url, data)
+        .success(function (result) {
+          deferred.resolve(result)
+        }).error(function (result) {
+          deferred.reject(result)
+        });
+      return deferred.promise;
+    }
   }
 }).factory(("ionPlatform"), function ($q) {
   var ready = $q.defer();
@@ -169,8 +195,8 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
     ready: ready.promise
   }
 }).factory(("barcodeScanner"), function () {
-  return{
-    scan:function(){
+  return {
+    scan: function () {
       cordova.plugins.barcodeScanner.scan(
         function (result) {
           alert("We got a barcode\n" +

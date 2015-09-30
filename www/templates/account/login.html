@@ -1,0 +1,28 @@
+<ion-modal-view enable-menu-with-back-views="false">
+  <ion-header-bar class="bar bar-header bar-stable">
+    <h1 class="title">用户登陆</h1>
+    <button class="button button-clear button-primary button-icon icon ion-ios-close-empty"
+            ng-click="vm.LoginModal.hide()"></button>
+  </ion-header-bar>
+  <ion-content class="">
+    <div class="list">
+      <label class="item" style="padding: 8px" ng-show="vm.loginErr">
+        <span style="color: red;font-size: 14px">{{vm.loginErr}}</span>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="用户名" ng-model="vm.LoginUser.account">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="密码" ng-model="vm.LoginUser.password">
+      </label>
+      <button class="button button-block button-positive" ng-click="vm.login()">
+        登陆
+      </button>
+
+      <div class="padding-right button-full button-block" style="text-align:right;">
+        <a href="javascript:void(0)" class="subdued " ng-click="vm.showSignModal()">快速注册</a>
+        <a href="javascript:void(0)" class="pull-right subdued ">忘记密码</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
