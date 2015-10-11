@@ -4,7 +4,7 @@
   "proxies": [
       {
         "path": "/rest",
-        "proxyUrl": "http://192.168.100.238:8080/rest"
+        "proxyUrl": "http://api.imdou8.com/rest"
       }
     ]
 }

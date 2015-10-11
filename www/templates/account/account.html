@@ -11,7 +11,7 @@
 <ion-view>
   <ion-content class="has-header has-footer">
     <ion-list class="im-account-list" ng-if="vm.isLogin">
-      <a class="item item-avatar" href="#" style="color: white">
+      <a class="item item-avatar"  style="color: white">
         <img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">
 
         <h2>{{vm.LoginUser.account}}</h2>
@@ -21,9 +21,9 @@
     </ion-list>
 
     <ion-list class="im-account-list" ng-if="!vm.isLogin" style="">
-      <a class="item item-avatar" href="#" ng-click="vm.showLoginModal()">
+      <a class="item item-avatar"  ng-click="vm.showLoginModal()">
         <img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">
-        <h2 href="#" style="color: white">未登陆</h2>
+        <h2  style="color: white">未登陆</h2>
       </a>
     </ion-list>
 
@@ -146,10 +146,16 @@
   }
 
   .im-span-divider {
-    border-top: 1px solid #f5f5f5;
-    padding: 0px;
+    /*border-top: 1px solid #f5f5f5;*/
     display: block;
     margin-left: 17px;
+    padding: 0;
+    overflow: hidden;
+    background-image: -webkit-linear-gradient(top, #ddd, #ddd 60%, transparent 60%);
+    background-size: 100% 1px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 1px;
   }
 
   .im-list-info {
