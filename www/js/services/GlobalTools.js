@@ -182,6 +182,27 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
           deferred.reject(result)
         });
       return deferred.promise;
+    },
+    getContacts: function (str) {
+      var options = new ContactFindOptions();
+      options.filter = str;
+      options.multiple = true;
+
+      var fields = ["displayName", "name", "phoneNumbers"];
+
+      navigator.contacts.find(fields, function (contacts) {
+        console.log("获取联系人列表" + JSON.stringify(contacts));
+        return contacts;
+      }, function () {
+        console.log("获取联系人失败，请设置允许查看联系人");
+      }, options);
+    },
+    checkWeiboClientInstalled:function(){
+      //YCWeibo.checkClientInstalled(function(){
+      //  console.log('client is installed');
+      //},function(){
+      //  console.log('client is not installed');
+      //});
     }
   }
 }).factory(("ionPlatform"), function ($q) {

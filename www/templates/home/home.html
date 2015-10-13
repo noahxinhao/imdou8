@@ -1,4 +1,4 @@
-<link href="../../css/style.css" rel="stylesheet">
+<!--<link href="../../css/style.css" rel="stylesheet">-->
 <ion-view>
   <div class="bar bar-header item-input-inset im-home-header" no-tap-scroll="true">
     <!-- header -->
@@ -85,7 +85,7 @@
     </div>
 
     <!-- 列表-->
-    <div class="list margin-bottom-clear" ng-repeat="topic in vm.topicList">
+    <div class="list margin-bottom-clear padding-clear"  ng-repeat="topic in vm.topicList">
       <div class="item-divider padding-left">{{topic.topicName}}</div>
       <a class="item"
          style="padding: 0px;border-width:0px; margin: 0px"
@@ -97,7 +97,8 @@
             <img ng-src="{{detail.imgUrl}}" style="width: 120px;height:80px;border-radius: 0px;margin-right: 9px"
                  align="left">
 
-            <div style="padding-bottom: 0px;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;">
+            <div
+              style="padding-bottom: 0px;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;">
               <h2 style="height: 20px; color: #333">{{detail.name}}</h2>
 
               <p

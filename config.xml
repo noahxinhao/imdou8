@@ -18,6 +18,7 @@
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <!--<preference name="REDIRECTURI" value="http://www.imdou8.com" />-->
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

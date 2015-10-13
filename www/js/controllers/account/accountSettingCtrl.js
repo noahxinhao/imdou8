@@ -6,16 +6,13 @@ angular.module('app.controllers')
     };
 
     vm.imgUrl = "img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png";
-    vm.getPhoto = function () {
-      CameraService.getPicture().then(function (data) {
+    vm.getPicture = function (type) {
+      CameraService.getPicture(type).then(function (data) {
         vm.imgUrl = data
       }, function (err) {
-        alert(err)
+        //alert(err)
+        console.log("未选择照片");
       });
-    };
-
-    vm.getPhotoFromAlbum = function(){
-      CameraService.pickImage();
     };
 
     vm.showActionSheet = function () {
@@ -33,11 +30,11 @@ angular.module('app.controllers')
         },
         buttonClicked: function (index) {
           if (index == 0) {
-            vm.getPhoto();
+            vm.getPicture("camera");
           }
 
           if (index == 1) {
-            vm.getPhotoFromAlbum();
+            vm.getPicture("photolibrary");
           }
           return true;
         }
