@@ -34,5 +34,8 @@
       "id": "cordova-plugin-contacts"
     }
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
 }

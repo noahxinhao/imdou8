@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-  .controller('AccountCtrl', function ($scope, $ionicModal, $http, appTools, serveApi,thirdPartyLogin) {
+  .controller('AccountCtrl', function ($scope, $ionicModal, $http, appTools, serveApi,thirdPartyLoginService) {
     var vm = $scope.vm = {};
     vm.isHideTabs = false;
     $scope.settings = {
@@ -13,7 +13,7 @@ angular.module('app.controllers')
 
     //微博登陆测试
     vm.weiboLogin = function(){
-      thirdPartyLogin.weiboLogin();
+      thirdPartyLoginService.weiboLogin();
     };
 
     vm.SignUser = {};

@@ -198,11 +198,11 @@ angular.module('app.services').factory('appTools', function ($cordovaDialogs,
       }, options);
     },
     checkWeiboClientInstalled:function(){
-      //YCWeibo.checkClientInstalled(function(){
-      //  console.log('client is installed');
-      //},function(){
-      //  console.log('client is not installed');
-      //});
+      YCWeibo.checkClientInstalled(function(){
+        console.log('client is installed');
+      },function(){
+        console.log('client is not installed');
+      });
     }
   }
 }).factory(("ionPlatform"), function ($q) {

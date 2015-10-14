@@ -1,117 +1,118 @@
 <!--<link href="../../css/style.css" rel="stylesheet">-->
 <ion-view>
-  <div class="bar bar-header item-input-inset im-home-header" no-tap-scroll="true">
-    <!-- header -->
-    <button class="button button-icon icon button-clear ion-white ion-ios-location-outline im-home-location"
-            ng-click="modal.show()">{{vm.location_city}}
-    </button>
-    <label class="item-input-wrapper" style="background-color: rgba(36, 43, 69, 0.9)!important;">
-      <i class="icon ion-ios-search placeholder-icon"></i>
-      <input type="search" placeholder="搜索商品" class="" style="background-color: transparent!important;"/>
-    </label>
-    <button class="button button-icon icon button-clear ion-white ion-qr-scanner im-home-scanner"
-            ng-click="vm.boardScan()"></button>
-  </div>
+    <div class="bar bar-header item-input-inset im-home-header" no-tap-scroll="true">
+        <!-- header -->
+        <button class="button button-icon icon button-clear ion-white ion-ios-location-outline im-home-location"
+                ng-click="modal.show()">{{vm.location_city}}
+        </button>
+        <label class="item-input-wrapper" style="background-color: rgba(36, 43, 69, 0.9)!important;">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="搜索商品" class="" style="background-color: transparent!important;"/>
+        </label>
+        <button class="button button-icon icon button-clear ion-white ion-qr-scanner im-home-scanner"
+                ng-click="vm.boardScan()"></button>
+    </div>
 
-  <ion-content class="has-header" on-pulling="vm.updateData()" no-tap-scroll="true">
-    <!-- 数据加载-->
-    <ion-refresher pulling-text="刷新" on-refresh="vm.updateData()"
-                   pulling-icon="ion-ios-arrow-thin-down">
-      <ion-spinner icon="spiral"></ion-spinner>
-    </ion-refresher>
+    <ion-content class="has-header" on-pulling="vm.updateData()" no-tap-scroll="true">
+        <!-- 数据加载-->
+        <ion-refresher pulling-text="刷新" on-refresh="vm.updateData()"
+                       pulling-icon="ion-ios-arrow-thin-down">
+            <ion-spinner icon="spiral"></ion-spinner>
+        </ion-refresher>
 
-    <!-- 轮播-->
-    <div class="list" style="padding-top: 0px;">
-      <ion-slide-box style="height:120px" on-slide-changed="slideHasChanged($index)" auto-play="true"
-                     does-continue="true" slide-interval="5000">
-        <ion-slide ng-repeat="ele in vm.slideElement">
-          <div class="box item-image">
-            <a href="#/tab/ad-details">
-              <img ng-src="{{ele.img}}" class="full-image im-silder" alt="...">
+        <!-- 轮播-->
+        <div class="list" style="padding-top: 0px;">
+            <ion-slide-box style="height:120px" on-slide-changed="slideHasChanged($index)" auto-play="true"
+                           does-continue="true" slide-interval="5000">
+                <ion-slide ng-repeat="ele in vm.slideElement">
+                    <div class="box item-image">
+                        <a href="#/tab/ad-details">
+                            <img ng-src="{{ele.img}}" class="full-image im-silder" alt="...">
+                        </a>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <!-- 主题-->
+        <div class="list margin-bottom-clear">
+            <div class="row padding-clear">
+                <div class="col text-align-center" ng-repeat="theme in vm.imTheme">
+                    <img class="logo-small im-border-radius-30"
+                         ng-src="{{theme.img}}"
+                         width="60" height="60">
+                    <br/>
+
+                    <p class="font-size-12px">{{theme.themeType}}</p>
+                </div>
+            </div>
+
+            <!-- 主题分割线-->
+            <div class="im-home-div-divider"></div>
+            <!-- 展示-->
+            <div class="row">
+                <div class="col im-right-border ">
+                    <img class=""
+                         src="http://gw.alicdn.com/tps/i2/TB1kMUjIXXXXXXrXpXXm_8E_XXX-450-540.jpg_q50.jpg?imgtag=avatar"
+                         height="100px"
+                         width="100%"/>
+                </div>
+                <div class="col col-50">
+                    <div class="row im-bottom-border ">
+                        <div class="col ">
+                            <img class=""
+                                 src="http://gw.alicdn.com/tps/i2/TB1FmJxHpXXXXX7XpXX.l5FJpXX-675-216.jpg_q50.jpg"
+                                 height="50px" width="100%"
+                                    />
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <img class=""
+                                 src="http://gw.alicdn.com/tps/i2/TB1r4D5IXXXXXcGXVXXW2_Z5VXX-333-324.png?imgtag=avatar"
+                                 height="50px" width="100%"
+                                    />
+                        </div>
+                        <div class="col">
+                            <img class=""
+                                 src="http://gw.alicdn.com/tps/i2/TB1BmEMHFXXXXaMaXXXW2_Z5VXX-333-324.png?imgtag=avatar"
+                                 height="50px" width="100%"
+                                    />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 列表-->
+        <div class="list margin-bottom-clear padding-clear group-list" ng-repeat="topic in vm.topicList">
+            <div class="item-divider padding-left" ion-affix data-affix-within-parent-with-class="group-list">{{topic.topicName}}</div>
+            <a class="item"
+               style="padding: 0px;border-width:0px; margin: 0px"
+               ng-repeat="detail in topic.details" href="{{detail.url}}">
+
+                <div class="" style="padding: 0px 9px 0px 9px;float: left;margin: 0px">
+                    <div style="padding: 9px 0px 9px 0px;margin: 0px;height: 99px; margin: 0px"
+                         ng-class="{true: 'im-span-home-divider', false: ''}[$index!=topic.details.length-1]">
+                        <img ng-src="{{detail.imgUrl}}"
+                             style="width: 120px;height:80px;border-radius: 0px;margin-right: 9px"
+                             align="left">
+
+                        <div
+                                style="padding-bottom: 0px;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;">
+                            <h2 style="height: 20px; color: #333">{{detail.name}}</h2>
+
+                            <p
+                                    style="font-size: 13px;height:40px;color:#666;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;"
+                                    ng-maxlength="28">
+                                {{detail.note}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </a>
-          </div>
-        </ion-slide>
-      </ion-slide-box>
-    </div>
-
-    <!-- 主题-->
-    <div class="list margin-bottom-clear">
-      <div class="row padding-clear">
-        <div class="col text-align-center" ng-repeat="theme in vm.imTheme">
-          <img class="logo-small im-border-radius-30"
-               ng-src="{{theme.img}}"
-               width="60" height="60">
-          <br/>
-
-          <p class="font-size-12px">{{theme.themeType}}</p>
         </div>
-      </div>
-
-      <!-- 主题分割线-->
-      <div class="im-home-div-divider"></div>
-      <!-- 展示-->
-      <div class="row">
-        <div class="col im-right-border ">
-          <img class=""
-               src="http://gw.alicdn.com/tps/i2/TB1kMUjIXXXXXXrXpXXm_8E_XXX-450-540.jpg_q50.jpg?imgtag=avatar"
-               height="100px"
-               width="100%"/>
-        </div>
-        <div class="col col-50">
-          <div class="row im-bottom-border ">
-            <div class="col ">
-              <img class=""
-                   src="http://gw.alicdn.com/tps/i2/TB1FmJxHpXXXXX7XpXX.l5FJpXX-675-216.jpg_q50.jpg"
-                   height="50px" width="100%"
-                />
-            </div>
-          </div>
-          <div class="row ">
-            <div class="col">
-              <img class=""
-                   src="http://gw.alicdn.com/tps/i2/TB1r4D5IXXXXXcGXVXXW2_Z5VXX-333-324.png?imgtag=avatar"
-                   height="50px" width="100%"
-                />
-            </div>
-            <div class="col">
-              <img class=""
-                   src="http://gw.alicdn.com/tps/i2/TB1BmEMHFXXXXaMaXXXW2_Z5VXX-333-324.png?imgtag=avatar"
-                   height="50px" width="100%"
-                />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 列表-->
-    <div class="list margin-bottom-clear padding-clear"  ng-repeat="topic in vm.topicList">
-      <div class="item-divider padding-left">{{topic.topicName}}</div>
-      <a class="item"
-         style="padding: 0px;border-width:0px; margin: 0px"
-         ng-repeat="detail in topic.details" href="{{detail.url}}">
-
-        <div class="" style="padding: 0px 9px 0px 9px;float: left;margin: 0px">
-          <div style="padding: 9px 0px 9px 0px;margin: 0px;height: 99px; margin: 0px"
-               ng-class="{true: 'im-span-home-divider', false: ''}[$index!=topic.details.length-1]">
-            <img ng-src="{{detail.imgUrl}}" style="width: 120px;height:80px;border-radius: 0px;margin-right: 9px"
-                 align="left">
-
-            <div
-              style="padding-bottom: 0px;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;">
-              <h2 style="height: 20px; color: #333">{{detail.name}}</h2>
-
-              <p
-                style="font-size: 13px;height:40px;color:#666;white-space: normal;-webkit-line-clamp: 2;    -webkit-box-orient: vertical;overflow: hidden;"
-                ng-maxlength="28">
-                {{detail.note}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>
 
 
