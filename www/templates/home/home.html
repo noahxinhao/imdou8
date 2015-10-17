@@ -1,6 +1,6 @@
 <!--<link href="../../css/style.css" rel="stylesheet">-->
 <ion-view>
-  <div class="bar bar-header item-input-inset im-home-header" no-tap-scroll="true">
+  <div class="bar bar-header item-input-inset im-home-header" style="padding-left: 2px" no-tap-scroll="true">
     <!-- header -->
     <button class="button button-icon icon button-clear ion-white icon-im-city im-home-location"
             ng-click="modal.show()">{{vm.location_city}}
@@ -154,4 +154,9 @@
   /*font-size: 20px;*/
   /*line-height: 32px;*/
   /*}*/
+
+  .im-home-location:before{
+    font-size: 20px!important;
+    left: 0px!important;
+  }
 </style>
