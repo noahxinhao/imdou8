@@ -1,0 +1,74 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?fwpq7u');
+	src:url('../fonts/icomoon.eot?fwpq7u#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?fwpq7u') format('truetype'),
+		url('../fonts/icomoon.woff?fwpq7u') format('woff'),
+		url('../fonts/icomoon.svg?fwpq7u#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="shebao-"], [class*=" shebao-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.shebao-back:before {
+	content: "\e800";
+}
+.shebao-call:before {
+	content: "\e801";
+}
+.shebao-card:before {
+	content: "\e802";
+}
+.shebao-close:before {
+	content: "\e803";
+}
+.shebao-edit:before {
+	content: "\e804";
+}
+.shebao-home:before {
+	content: "\e805";
+}
+.shebao-iphone:before {
+	content: "\e806";
+}
+.shebao-message:before {
+	content: "\e807";
+}
+.shebao-Messageo:before {
+	content: "\e808";
+}
+.shebao-people:before {
+	content: "\e809";
+}
+.shebao-Profile:before {
+	content: "\e80a";
+}
+.shebao-settings:before {
+	content: "\e80b";
+}
+.shebao-Sound:before {
+	content: "\e80c";
+}
+.shebao-student:before {
+	content: "\e80d";
+}
+.shebao-suggest:before {
+	content: "\e80e";
+}
+.shebao-wechat:before {
+	content: "\e80f";
+}
+

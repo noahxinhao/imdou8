@@ -10,9 +10,38 @@
 </div>
 <ion-view>
   <div id="the-image-id" class="elastic-image"
-       style="background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950)"></div>
+       style="background-image: url('img/photo-1421091242698-34f6ad7fc088.jpeg')">
+    <div class="list" style="padding-top: 74px;position: relative;bottom: 8px">
+      <ion-item class="profile-item" style="background: transparent;!important;padding: 0px;border: 0px ">
+        <a class="profile-picture" ng-click="vm.showLoginModal()">
+          <img src="https://randomuser.me/api/portraits/women/36.jpg" class="animated pulse">
+        </a>
 
-  <ion-content elastic-image="the-image-id" class="" style="padding-top: 200px;">
+        <p class="profile-name">哈利不是小王子</p>
+
+        <div class="" style="font-size: 14px;color: #31708f">大哥，尼玛比炸了</div>
+      </ion-item>
+    </div>
+  </div>
+  <ion-content class="has-header has-footer" elastic-image="the-image-id" style="position:relative">
+
+    <!--<ion-list class="im-account-list" ng-if="vm.isLogin">-->
+    <!--<a class="item item-avatar"  style="color: white">-->
+    <!--<img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">-->
+
+    <!--<h2>{{vm.LoginUser.account}}</h2>-->
+
+    <!--<p>Back off, man. I'm a scientist.</p>-->
+    <!--</a>-->
+    <!--</ion-list>-->
+
+    <!--<ion-list class="im-account-list" ng-if="!vm.isLogin" style="">-->
+    <!--<a class="item item-avatar"  ng-click="vm.showLoginModal()">-->
+    <!--<img src="img/TB1km1AIXXXXXaAXVXXTIPs_XXX-1125-352.png" class="animated pulse">-->
+    <!--<h2  style="color: white">未登陆</h2>-->
+    <!--</a>-->
+    <!--</ion-list>-->
+
     <div class="im-div-divider"></div>
 
     <div class="list im-list-info">
@@ -34,8 +63,8 @@
           <i class="icon ion-chevron-right icon-accessory"></i>
         </span>
       </a>
-    </div>
 
+    </div>
     <div class="im-div-divider"></div>
 
     <div class="list im-list-info">
@@ -84,10 +113,9 @@
         推送附近活动
       </ion-toggle>
     </ion-list>
-
   </ion-content>
 </ion-view>
-
+<ion-nav-view name="account-view"></ion-nav-view>
 <style>
   .im-account-header {
     background-color: rgba(36, 43, 69, 0.9);
@@ -99,12 +127,12 @@
     border: 0px;
   }
 
-  .im-div-divider {
-    min-height: 14px;
-    background-color: #f5f5f5 !important;
-    color: #222;
-    font-weight: 500;
-  }
+
+  /*.im-account-list > div {*/
+  /*padding-top: 0px;*/
+  /*background-image: url('img/bg/account-3.png');*/
+
+  /*}*/
 
   .im-account-list > div > a {
     border-top: 0px !important;
@@ -123,6 +151,13 @@
 
   .im-account-list > div > a.activated {
     background-color: rgba(12, 19, 42, 0.8) !important;
+  }
+
+  .im-div-divider {
+    min-height: 14px;
+    background-color: #f5f5f5 !important;
+    color: #222;
+    font-weight: 500;
   }
 
   .im-span-divider {
@@ -175,12 +210,43 @@
     border-top-width: 0px !important;
   }
 
+
   .elastic-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 0px;
     /* Initial image height: */
-    height: 200px;
+    height: 230px;
+  }
+
+  .profile-item {
+    text-align: center;
+  }
+
+  .profile-picture {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    border-radius: 100%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+  }
+
+  .profile-picture img {
+    width: 80px;
+    border-radius: 100%;
+  }
+
+  .profile-name {
+    color: #fbfbff !important;
+    font-size: 18px !important;
+    padding-top: 10px;
+    font-weight: bold !important;
+    text-transform: capitalize;
   }
 </style>
