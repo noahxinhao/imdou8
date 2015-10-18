@@ -8,15 +8,36 @@
   </h3>
   <button class="button button-icon button-clear ion-ios-more ion-white" ng-click="popover.show($event)"></button>
 </div>
+
 <ion-view>
   <div id="the-image-id" class="elastic-image"
-       style="background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950)"></div>
-
-  <ion-content elastic-image="the-image-id" class="" style="padding-top: 200px;">
+       style="background-image: url('img/account-bg.jpeg')">
+  </div>
+  <ion-content elastic-image="the-image-id" class="" style="padding-top: 230px;">
+    <!-- 用户图像-->
+    <div style="position: absolute;top:-135px;width: 100%;">
+      <div
+        style="width: 80px;height: 80px;margin:auto;">
+        <img src="../img/user-tpl.jpg" class="animated pulse"
+             style="height: 100%;width: 100%;border-radius: 100%;border: 1px solid rgba(0, 0, 0, 0.25);padding: 0px">
+      </div>
+      <div style="height: 30px;line-height:30px;text-align: center">
+        <strong style="color: #fbfbff !important;">哈利不是小王子</strong>
+      </div>
+      <div style="height: 20px;line-height:20px;text-align: center;color: #666">
+        <span class="icon-pencil" style="color: white"></span> 大哥 尼玛炸了，真的炸了啊
+      </div>
+    </div>
+    <!-- 列表-->
     <div class="im-div-divider"></div>
 
-    <div class="list im-list-info">
-      <a class="item item-icon-left im-list-bottom-clear im-clear-bottom-margin" href="#/tab/wallet">
+    <div class="list im-list-info"
+         style="padding: 0px;margin: 0px;
+         border-top: 1px solid #e0e0e0;
+         border-bottom: 1px solid #e0e0e0;">
+
+      <a class="item item-icon-left" style="margin: 0px;border: 0px"
+         href="#/tab/wallet">
         <i class="icon ion-briefcase calm"></i>
         <span style="padding-left: 0px">钱包</span>
         <span class="item-note">
@@ -26,20 +47,27 @@
           <i class="icon ion-chevron-right icon-accessory"></i>
         </span>
       </a>
+
       <span class="im-span-divider"></span>
-      <a class="item item-icon-left im-list-top-clear im-clear-top-margin" href="#/tab/bank-card">
+
+      <a class="item item-icon-left" style="margin: 0px;border: 0px"
+         href="#/tab/bank-card">
         <i class="icon ion-card positive"></i>
         <span style="padding-left: 0px">银行卡</span>
-        <span class="badge">
-          <i class="icon ion-chevron-right icon-accessory"></i>
-        </span>
+      <span class="badge">
+      <i class="icon ion-chevron-right icon-accessory"></i>
+      </span>
       </a>
     </div>
 
     <div class="im-div-divider"></div>
 
-    <div class="list im-list-info">
-      <a class="item item-icon-left im-list-bottom-clear im-clear-bottom-margin" style="border-bottom-width: 0px;"
+    <div class="list im-list-info"
+         style="padding: 0px;margin: 0px;
+         border-top: 1px solid #e0e0e0;
+         border-bottom: 1px solid #e0e0e0;">
+
+      <a class="item item-icon-left" style="margin: 0px;border: 0px"
          href="#/tab/follow">
         <i class="icon ion-heart assertive"></i>
         <span style="padding-left: 0px">关注</span>
@@ -50,7 +78,7 @@
       </a>
 
       <span class="im-span-divider"></span>
-      <a class="item item-icon-left  im-clear-top-bottom-margin" style="border-top-width: 0px;border-bottom-width: 0px"
+      <a class="item item-icon-left" style="margin: 0px;border: 0px"
          href="#/tab/coupons">
         <i class="icon ion-cash balanced"></i>
         <span style="padding-left: 0px">优惠券</span>
@@ -60,7 +88,7 @@
         </span>
       </a>
       <span class="im-span-divider"></span>
-      <a class="item item-icon-left im-list-bottom-top-clear im-clear-top-bottom-margin" href="#/tab/shopping_cart">
+      <a class="item item-icon-left" style="margin: 0px;border: 0px" href="#/tab/shopping_cart">
         <i class="icon ion-ios-cart positive"></i>
         <span style="padding-left: 0px">购物车</span>
         <span class="badge">
@@ -69,7 +97,7 @@
       </a>
 
       <span class="im-span-divider"></span>
-      <a class="item item-icon-left im-list-top-clear im-clear-top-margin" href="#/tab/friends">
+      <a class="item item-icon-left" style="margin: 0px;border: 0px" href="#/tab/friends">
         <i class="icon ion-person-stalker royal"></i>
         <span style="padding-left: 0px">好友</span>
         <span class="badge">
@@ -79,7 +107,10 @@
     </div>
 
     <div class="im-div-divider"></div>
-    <ion-list>
+    <ion-list style="padding: 0px;margin: 0px;
+         border-top: 1px solid #e0e0e0;
+         border-bottom: 1px solid #e0e0e0;">
+
       <ion-toggle ng-model="settings.enableFriends">
         推送附近活动
       </ion-toggle>
@@ -121,12 +152,11 @@
     max-height: 65px !important;
   }
 
-  .im-account-list > div > a.activated {
-    background-color: rgba(12, 19, 42, 0.8) !important;
-  }
+  /*.im-account-list > div > a.activated {*/
+    /*background-color: rgba(12, 19, 42, 0.8) !important;*/
+  /*}*/
 
   .im-span-divider {
-    /*border-top: 1px solid #f5f5f5;*/
     display: block;
     margin-left: 17px;
     padding: 0;
@@ -136,10 +166,6 @@
     background-position: bottom;
     background-repeat: no-repeat;
     height: 1px;
-  }
-
-  .im-list-info {
-    margin-bottom: 0px;
   }
 
   .im-list-info > a {
@@ -162,25 +188,13 @@
     font-size: 23px !important;
   }
 
-  .im-list-bottom-clear {
-    border-bottom-width: 0px !important;
-  }
-
-  .im-list-top-clear {
-    border-top-width: 0px !important;
-  }
-
-  .im-list-bottom-top-clear {
-    border-bottom-width: 0px !important;
-    border-top-width: 0px !important;
-  }
-
   .elastic-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 0px;
     /* Initial image height: */
-    height: 200px;
+    height: 230px;
   }
+
 </style>
