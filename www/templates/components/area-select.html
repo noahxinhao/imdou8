@@ -25,14 +25,18 @@
       </a>
       <span class="im-span-divider"></span>
     </div>
-    <div class="list im-area-select-list-info" ng-repeat="city in vm.AREA.CITY | suport |filter:query"
-         ng-click="vm.select_city(city)">
-      <a class="item item-icon-left im-list-bottom-top-clear" style="border-bottom-width: 0px;" href="#">
-        <span style="padding-left: 0px">{{city.name}}</span>
-        <span class="item-note"></span>
-      </a>
-      <span class="im-span-divider"></span>
-    </div>
+
+    <!--<div class="list im-area-select-list-info" ng-repeat="city in vm.AREA.CITY | suport |filter:query"-->
+         <!--ng-click="vm.select_city(city)">-->
+      <!--<a class="item item-icon-left im-list-bottom-top-clear" style="border-bottom-width: 0px;" href="#">-->
+        <!--<span style="padding-left: 0px">{{city.name}}</span>-->
+        <!--<span class="item-note"></span>-->
+      <!--</a>-->
+      <!--<span class="im-span-divider"></span>-->
+    <!--</div>-->
+    <ion-alpha-scroll ng-model="vm.AREA.CITY" key="pinyin" >
+      <div>{{item.name}}</div>
+    </ion-alpha-scroll>
 
   </ion-content>
 </ion-modal-view>

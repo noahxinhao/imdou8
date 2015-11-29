@@ -24,7 +24,7 @@ angular.module('app.services').factory('pusNotificationService', function ($cord
       });
       //}
     },
-    addLocalNotification:function(){
+    addLocalNotification: function () {
 
     },
     handleNotification: function (notification) {
