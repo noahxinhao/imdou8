@@ -9,10 +9,10 @@ angular.module('ion-alpha-scroll', [])
 			compile: function(tElement, tAttrs, tTransclude){
 				var children = tElement.contents();
 				var template = angular.element([
-					'<ion-list class="ion_alpha_list_outer group-list">',
+					'<ion-list class="ion_alpha_list_outer">',
 						'<ion-scroll delegate-handle="alphaScroll">',
 							'<div data-ng-repeat="(letter, items) in sorted_items" class="ion_alpha_list">',
-								'<ion-item class="item item-divider" ion-affix data-affix-within-parent-with-class="group-list" id="index_{{letter}}">{{letter}}</ion-item>',
+								'<ion-item class="item item-divider"  ion-affix data-affix-within-parent-with-class="ion_alpha_list" id="index_{{letter}}">{{letter}}</ion-item>',
 								'<ion-item ng-repeat="item in items"></ion-item>',
 							'</div>',
 						'</ion-scroll>',

@@ -19,7 +19,7 @@
     <div class="list im-area-select-list-info" style="text-align: center">
       <a class="item item-icon-left im-list-bottom-top-clear" style="" href="#">
         <span style="padding-left: 0px">
-          <i class="icon icon-accessory fa fa-map-marker fa-lg calm"style="font-size: 26px"></i>
+          <i class="icon icon-accessory fa fa-map-marker fa-lg calm" style="font-size: 26px"></i>
           定位当前位置
         </span>
       </a>
@@ -27,17 +27,17 @@
     </div>
 
     <!--<div class="list im-area-select-list-info" ng-repeat="city in vm.AREA.CITY | suport |filter:query"-->
-         <!--ng-click="vm.select_city(city)">-->
-      <!--<a class="item item-icon-left im-list-bottom-top-clear" style="border-bottom-width: 0px;" href="#">-->
-        <!--<span style="padding-left: 0px">{{city.name}}</span>-->
-        <!--<span class="item-note"></span>-->
-      <!--</a>-->
-      <!--<span class="im-span-divider"></span>-->
+    <!--ng-click="vm.select_city(city)">-->
+    <!--<a class="item item-icon-left im-list-bottom-top-clear" style="border-bottom-width: 0px;" href="#">-->
+    <!--<span style="padding-left: 0px">{{city.name}}</span>-->
+    <!--<span class="item-note"></span>-->
+    <!--</a>-->
+    <!--<span class="im-span-divider"></span>-->
     <!--</div>-->
-    <ion-alpha-scroll ng-model="vm.AREA.CITY" key="pinyin" >
-      <div>{{item.name}}</div>
-    </ion-alpha-scroll>
 
+    <ion-alpha-scroll ng-model="vm.AREA.CITY" key="pinyin">
+      <div ng-click="vm.select_city(item)">{{item.name}}</div>
+    </ion-alpha-scroll>
   </ion-content>
 </ion-modal-view>
 
